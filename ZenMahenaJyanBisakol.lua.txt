@@ -697,6 +697,30 @@ mainTab:AddSwitch("Auto Evolve All Pets", function(state)
     end
 end)
 
+mainTab:AddLabel("Auto Get Pet")
+
+mainTab:AddSwitch("Auto Get Secret Chaos Sorcerer", function(state)
+    getgenv().AutoGetSorcerer = state
+    
+    task.spawn(function()
+        while getgenv().AutoGetSorcerer do
+            local args = {
+                [1] = "openCrystal",
+                [2] = "Secret Blades Crystal",
+                [3] = 1
+            }
+            local remote = game:GetService("ReplicatedStorage"):WaitForChild("rEvents", 3):WaitForChild("openCrystalRemote", 3)
+            
+            if remote then
+                remote:InvokeServer(unpack(args))
+            end
+            
+            task.wait(0.1) 
+        end
+    end)
+end)
+
+
 local _Teleport = window:AddTab('Teleport')
 
 -- Global Teleport Selection Variables
