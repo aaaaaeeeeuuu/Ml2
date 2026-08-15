@@ -570,15 +570,7 @@ end)
 -- Populating dropdown items following strict Elerium structural formats
 crystalDropdown:Add("Ultra Shockwave Crystal")
 crystalDropdown:Add("Secret Void Crystal")
-crystalDropdown:Add("Jungle Crystal")
-crystalDropdown:Add("Galaxy Oracle Crystal")
-crystalDropdown:Add("Muscle Elite Crystal")
-crystalDropdown:Add("Legends Crystal")
-crystalDropdown:Add("Inferno Crystal")
-crystalDropdown:Add("Mythical Crystal")
-crystalDropdown:Add("Frost Crystal")
-crystalDropdown:Add("Green Crystal")
-crystalDropdown:Add("Blue Crystal")
+crystalDropdown:Add("Secret Blades Crystal")
 
 -- 2. Create the main loop control switch
 mainTab:AddSwitch("Auto Open Selected", function(state)
@@ -605,7 +597,7 @@ end)
 mainTab:AddLabel("Auto Sell")
 
 -- The specific sellPet remote script wrapped inside an AddSwitch loop
-mainTab:AddSwitch("Auto Sell Corrupted Elements Hydra", function(state)
+mainTab:AddSwitch("Auto Sell Orange Hedgehog", function(state)
     getgenv().AutoSell = state
     
     -- When the switch is turned ON, start a repeating loop
@@ -613,7 +605,7 @@ mainTab:AddSwitch("Auto Sell Corrupted Elements Hydra", function(state)
         while getgenv().AutoSell do
             local args = {
                 [1] = "sellPet",
-                [2] = "Corrupted Elements Hydra"
+                [2] = "Orange Hedgehog"
             }
             local remote = game:GetService("ReplicatedStorage"):WaitForChild("rEvents", 3):WaitForChild("sellPetEvent", 3)
             
@@ -622,7 +614,7 @@ mainTab:AddSwitch("Auto Sell Corrupted Elements Hydra", function(state)
             end
             
             -- Adjust this delay (in seconds) so the server doesn't kick you for spamming
-            task.wait(0.1) 
+            task.wait(0.5) 
         end
     end)
 end)
