@@ -548,7 +548,7 @@ local mainTab = window:AddTab("Crystals")
 
 -- State variables
 local autoOpenActive = false
-local selectedCrystal = "Secret Void Crystal" -- Default tracking option
+local selectedCrystal = "Unlimited Secrets Crystal" -- Default tracking option
 
 -- Optimized internal nil asset scanner
 local function getNil(name, class)
@@ -568,6 +568,7 @@ local crystalDropdown = mainTab:AddDropdown("Select Crystal", function(choice)
 end)
 
 -- Populating dropdown items following strict Elerium structural formats
+crystalDropdown:Add("Unlimited Secrets Crystal")
 crystalDropdown:Add("Ultra Shockwave Crystal")
 crystalDropdown:Add("Secret Void Crystal")
 crystalDropdown:Add("Secret Blades Crystal")
@@ -597,7 +598,7 @@ end)
 mainTab:AddLabel("Auto Sell")
 
 -- The specific sellPet remote script wrapped inside an AddSwitch loop
-mainTab:AddSwitch("Auto Sell Orange Hedgehog", function(state)
+mainTab:AddSwitch("Auto Sell Golden Sun Pegasus", function(state)
     getgenv().AutoSell = state
     
     -- When the switch is turned ON, start a repeating loop
@@ -605,7 +606,7 @@ mainTab:AddSwitch("Auto Sell Orange Hedgehog", function(state)
         while getgenv().AutoSell do
             local args = {
                 [1] = "sellPet",
-                [2] = "Orange Hedgehog"
+                [2] = "Golden Sun Pegasus"
             }
             local remote = game:GetService("ReplicatedStorage"):WaitForChild("rEvents", 3):WaitForChild("sellPetEvent", 3)
             
@@ -620,7 +621,7 @@ mainTab:AddSwitch("Auto Sell Orange Hedgehog", function(state)
 end)
 
 -- The specific sellPet remote script wrapped inside an AddSwitch loop
-mainTab:AddSwitch("Auto Sell Dual Destiny Shadow Dragon", function(state)
+mainTab:AddSwitch("Auto Sell Darkstorm Elemental Hydra", function(state)
     getgenv().AutoSell = state
     
     -- When the switch is turned ON, start a repeating loop
@@ -628,7 +629,7 @@ mainTab:AddSwitch("Auto Sell Dual Destiny Shadow Dragon", function(state)
         while getgenv().AutoSell do
             local args = {
                 [1] = "sellPet",
-                [2] = "Dual Destiny Shadow Dragon"
+                [2] = "Darkstorm Elemental Hydra"
             }
             local remote = game:GetService("ReplicatedStorage"):WaitForChild("rEvents", 3):WaitForChild("sellPetEvent", 3)
             
