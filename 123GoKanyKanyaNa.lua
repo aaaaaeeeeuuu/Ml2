@@ -548,7 +548,7 @@ local mainTab = window:AddTab("Crystals")
 
 -- State variables
 local autoOpenActive = false
-local selectedCrystal = "Unlimited Secrets Crystal" -- Default tracking option
+local selectedCrystal = "Infinity Void Crystal" -- Default tracking option
 
 -- Optimized internal nil asset scanner
 local function getNil(name, class)
@@ -568,6 +568,7 @@ local crystalDropdown = mainTab:AddDropdown("Select Crystal", function(choice)
 end)
 
 -- Populating dropdown items following strict Elerium structural formats
+crystalDropdown:Add("Infinity Void Crystal")
 crystalDropdown:Add("Unlimited Secrets Crystal")
 crystalDropdown:Add("Ultra Shockwave Crystal")
 crystalDropdown:Add("Secret Void Crystal")
